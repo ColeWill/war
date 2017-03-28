@@ -1,0 +1,14 @@
+header{
+	text-align: center;
+	background-color: rgb(244, 66, 66);
+	color: #f2e6e6;
+}
+main{
+	height:400px;
+}
+footer{
+	text-align:center;
+	background-color: black;
+	color: white;
+	height: 300px;
+}
