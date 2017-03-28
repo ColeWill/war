@@ -5,10 +5,34 @@ header{
 }
 main{
 	height:400px;
+	text-align: center;
+}
+
+.leftBox{
+	border: 3px solid black;
+	height:300px;
+	width:300px;
+	float: left;
+	display: block;
+	margin-right: 5%
+	margin-left: 25%;
+	margin-top:5%;
+}
+.rightBox{
+	border: 3px solid black;
+	height:300px;
+	width:300px;
+	float: right;
+	display: block;
+	margin-top:5%;
+}
+h4{
+	padding: 20px;
 }
 footer{
 	text-align:center;
 	background-color: black;
 	color: white;
 	height: 300px;
+
 }
