@@ -26,46 +26,53 @@ var clubs7 =    {val: "7", location:"images/7clubs.png"};
 var pach9 =     {val: "9", location:"images/9dpach.jpg"};
 
 //left cards
-var snowMan =     {val: "10", location:"images/10snowman.jpg", name:""};
-var snout =  {val: "11", location:"images/11snout.jpg", name:""};
-var queen =    {val: "12", location:"images/12clubsPachimon.jpg",name:""};
-var curly =     {val: "13", location:"images/13curly.jpg",name:""};
+var snowMan =     {val: "10", location:"images/10snowman.jpg", name:"snowMan"};
+var snout =  {val: "11", location:"images/11snout.jpg", name:"snout"};
+var queen =    {val: "12", location:"images/12clubsPachimon.jpg",name:"queen"};
+var curly =     {val: "13", location:"images/13curly.jpg",name:"Curly"};
 
 
 var leftCardArray = [snowMan, snout, curly, queen];
 var rightCardArray = [snowMan, snout, curly, queen];
 
 
-
+var winArray = [];
 
 function buttonPressed(key) {
 
 	   
 	
 	 //var rando = (Math.floor(Math.random()*(4)));
-	 var winArray = [];
+	 
+var flippedRightRando = rightCardArray[(Math.floor(Math.random()*(4)))];
+var flippedLeftRando = leftCardArray[(Math.floor(Math.random()*(4)))];
+	
 
 	 if (key === "n"){
-	 	var flippedRightRando = rightCardArray[(Math.floor(Math.random()*(4)))];
+	 	
 	 	//each time "n" is passed in a new random from rightCard Array is passed in and its url is used     
 	 	$('.rightCardFace').css("background-image",'url(' +flippedRightRando.location+ ')');
+	 	
 	 	winArray.push(flippedRightRando);
 	 	
-
-	 }
+	}
 	 else if (key === "s"){
-	 	var flippedLeftRando = leftCardArray[(Math.floor(Math.random()*(4)))];
+	 	
 	 	$('.leftCardFace').css("background-image", 'url('+flippedLeftRando.location+ ')');
 	 	winArray.push(flippedLeftRando);
-
-	 	//insert an img into skulls' div
-	 	
 	 }
 	 
-	  //flipped and ALL of their info are stored here
-	 console.log(winArray);  ///flipped cards ARE going in!!!!
+	  ///flipped cards ARE going in!!!!
 
+	  //flipped and ALL of their info are stored here
+	 if(winArray.length % 2 === 0){
+	 	console.log("array is even");
+	 	
+	 	}
+	 	
 	 
+
+}//buttonPressed funtion end
 
 //need my win condition to reset, also to wait for the second card
 	
@@ -73,7 +80,7 @@ function buttonPressed(key) {
 		//if the length of the winCon array has even cards, run winCondition
 		//if (winArray.length % 2 === 0){
 
-	 //		if(rightCardArray.val > leftCardArray.val){
+	 		//if(winArrar[] > leftCardArray.val){
 	 //	$('.rightScore').text("Black Panther has Won this Hand");
 	 	//also add a point to the score
 	// } else if (rightCardArray[0].val === leftCardArray.val) {
@@ -81,7 +88,7 @@ function buttonPressed(key) {
 	// } else {
 	 //	$('.leftScore').text("Bicycle-SKulls has won this Hand");
 	// }
-//}
+
 
 	 ///check for a win condition using an html data value
 	 // card can be stored {"url":"images/image.png", "value":"3"}
@@ -90,6 +97,6 @@ function buttonPressed(key) {
 	 // if won is higher display win conditon for that side
 	 //else other side won
 
-}
+
 
 
