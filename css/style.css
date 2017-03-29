@@ -8,10 +8,44 @@ main{
 	text-align: center;
 }
 
+img.cardBack{
+	background-size: cover;
+	height: 260px;
+	width: 190px;
+	display: inline-block;
+	margin-top: 5%;
+}
+
+.leftCardFace{
+	display: block;
+	border: 3px dotted grey;
+	float: right;
+	width:190px;
+	height: 260px;
+	background-color: #f0ffea;
+	background-size: cover;
+}
+.rightCardFace{
+	border: 3px dotted grey;
+	float: left;
+	width:190px;
+	height: 260px;
+	background-color: #f0ffea;
+	background-size: cover;
+}
+#leftBack{
+	float:left;
+	margin-left: 5%;
+}
+#rightBack{
+	float: right;
+	margin-right: 5%;
+}
 .leftBox{
+	
 	border: 3px solid black;
 	height:300px;
-	width:300px;
+	width:500px;
 	float: left;
 	display: block;
 	margin-right: 5%
@@ -21,11 +55,25 @@ main{
 .rightBox{
 	border: 3px solid black;
 	height:300px;
-	width:300px;
+	width:500px;
 	float: right;
 	display: block;
 	margin-top:5%;
 }
+button{
+	display: inline-block;
+	margin:0 auto;
+
+}
+#panther{
+	margin-left: 10%;
+	float:left;
+}
+#skull{
+	float:right;
+	margin-right: 10%;
+}
+
 h4{
 	padding: 20px;
 }
