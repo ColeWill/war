@@ -1,4 +1,4 @@
-console.log("Js is Linked");
+
 
 $('document').ready(function(){
 	$(document).bind('keyup', move);
@@ -37,6 +37,8 @@ var rightCardArray = [snowMan, snout, curly, queen];
 
 
 var winArray = [];
+var rightCardScore = 0;
+var leftCardScore = 0;
 
 function buttonPressed(key) {
 
@@ -44,16 +46,16 @@ function buttonPressed(key) {
 	
 	 //var rando = (Math.floor(Math.random()*(4)));
 	 
-var flippedRightRando = rightCardArray[(Math.floor(Math.random()*(4)))];
-var flippedLeftRando = leftCardArray[(Math.floor(Math.random()*(4)))];
+	var flippedRightRando = rightCardArray[(Math.floor(Math.random()*(4)))];
+	var flippedLeftRando = leftCardArray[(Math.floor(Math.random()*(4)))];
 	
 
 	 if (key === "n"){
 	 	
 	 	//each time "n" is passed in a new random from rightCard Array is passed in and its url is used     
 	 	$('.rightCardFace').css("background-image",'url(' +flippedRightRando.location+ ')');
-	 	
 	 	winArray.push(flippedRightRando);
+	 	//stop me from happening9
 	 	
 	}
 	 else if (key === "s"){
@@ -63,10 +65,30 @@ var flippedLeftRando = leftCardArray[(Math.floor(Math.random()*(4)))];
 	 }
 	 
 	  ///flipped cards ARE going in!!!!
-
+				//console.log("right card val "+ flippedLeftRando.val);
+	 			//console.log("left Card val "+ flippedRightRando.val);
 	  //flipped and ALL of their info are stored here
-	 if(winArray.length % 2 === 0){
+	 if(winArray.length === 2){
 	 	console.log("array is even");
+
+	 	if(flippedRightRando.val > flippedLeftRando.val){
+	 		console.log(flippedRightRando.val);
+	 		console.log('right won');
+
+	 		rightCardScore++;
+	 		$('.rightScore').text(rightCardScore);
+	 		console.log(rightCardScore);
+
+	 	}else if (flippedRightRando.val < flippedLeftRando.val){
+	 		leftCardScore++;
+	 		$('.leftScore').text(leftCardScore);
+
+	 	} else if (flippedRightRando.val === flippedLeftRando.val) {
+
+	 		$('h4').text("You have both failed to Win...");
+	 	}
+	 	//win array = [] //assign to 0 so its empty
+
 	 	
 	 	}
 	 	

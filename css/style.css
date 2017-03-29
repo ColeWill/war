@@ -3,6 +3,9 @@ header{
 	background-color: rgb(244, 66, 66);
 	color: #f2e6e6;
 }
+h4{
+	text-align: center;
+}
 main{
 	height:400px;
 	text-align: center;
@@ -21,13 +24,16 @@ img.cardBack{
 	float: left;
 	font-size:20px;
 	border: 3px black solid;
+	padding: 10px;
 	
+
 }
 .rightScore{
 	display:block;
 	float:right;
 	font-size:20px;
 	border: 3px black solid;
+	padding: 10px;
 }
 
 .leftCardFace{
@@ -88,7 +94,7 @@ button{
 	margin-right: 10%;
 }
 
-h4{
+h5{
 	padding: 20px;
 }
 footer{
