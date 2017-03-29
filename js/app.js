@@ -18,8 +18,13 @@ $('document').ready(function(){
 	}
 });
 
-var leftCardArray = ["images/6diamonds.png", "images/7clubs.png"];
+var diamons6 = {val: "6", location:"images/6diamonds.png"};
+var clubs7 = {val: "7", location:"images/7clubs.png"};
+
+var leftCardArray = [diamons6.location, clubs7.location];
 var rightCardArray = ["images/6diamonds.png", "images/7clubs.png"];
+
+
 
 
 function buttonPressed(key) {
