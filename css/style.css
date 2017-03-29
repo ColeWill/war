@@ -16,6 +16,20 @@ img.cardBack{
 	margin-top: 5%;
 }
 
+.leftScore{
+	display:block;
+	float: left;
+	font-size:20px;
+	border: 3px black solid;
+	
+}
+.rightScore{
+	display:block;
+	float:right;
+	font-size:20px;
+	border: 3px black solid;
+}
+
 .leftCardFace{
 	display: block;
 	border: 3px dotted grey;
