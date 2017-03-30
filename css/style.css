@@ -20,20 +20,22 @@ img.cardBack{
 }
 
 .leftScore{
-	display:block;
-	float: left;
+	display:inline-block;
+	
 	font-size:20px;
 	border: 3px black solid;
 	padding: 10px;
-	
+	margin-right: 10%;
+
 
 }
 .rightScore{
-	display:block;
-	float:right;
+	display:inline-block;
+	
 	font-size:20px;
 	border: 3px black solid;
 	padding: 10px;
+	margin-left: 10%;
 }
 
 .leftCardFace{
