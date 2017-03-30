@@ -75,7 +75,7 @@ img.cardBack{
 
 .backgroundAn{
 	background-color: red;
-
+	
 	color:white;
 	position: relative;
     -webkit-animation-name: backdrop; /* Safari 4.0 - 8.0 */
@@ -118,6 +118,7 @@ img.cardBack{
 		font-size:40px;
 		border: 5px red solid;
 		padding: 20px;
+		
 		}
 }
 
