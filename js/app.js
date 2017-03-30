@@ -19,22 +19,67 @@ $(document).ready(function(){
 });
 //all the card values and locations are stored here
 
-//right cards
-var pach5 =     {val: "3", location:"images/3ofclubsPachimon.jpg"};
-var diamons6 =  {val: "6", location:"images/6diamonds.png"};
-var clubs7 =    {val: "7", location:"images/7clubs.png"};
-var pach9 =     {val: "9", location:"images/9dpach.jpg"};
+var snowMan =     {val:10, location:"images/10snowman.jpg", name:"snowMan"};
+var snout =       {val:12, location:"images/12snout.jpg", name:"Snouty Dragon"};
+var queen =       {val:12, location:"images/12clubsPachimon.jpg",name:"queen"};
+var curly =       {val:13, location:"images/13curly.jpg",name:"Curly-Mon"};
+var eater =       {val: 9, location:"images/9dpach.jpg",name:"The-Snacker"};
+var appleGuy=     {val:10, location:"images/10appleguy.jpg", name:"Apple Guy"};
+var unisuar=      {val:11, location:"images/11unisaur.jpg", name:"The Unisaur"};
+var weird=        {val:11, location:"images/11weird.jpg", name:"WTF?!?!"};
+var fishKing=     {val:13, location:"images/13fishKing.jpg", name:"The Fish King"};
+var starFish=     {val:14, location:"images/14starfish.jpg", name:"StarFish Face"};
+var saucerHead=   {val: 1, location:"images/1saucerhead.jpg", name:"saucerHead"};
+var lobDragon =   {val: 2, location:"images/2dragon.jpg", name: "Lobster Dragon"};
+var lizard=       {val: 2, location:"images/2lizard.jpg", name:"Basic Lizard"};
+var pach5 =       {val: 3, location:"images/3ofclubsPachimon.jpg", name:"Basic Sea Lizard"};
+var roboTeets=    {val: 3, location:"images/3robotits.jpg", name:"RoboTeets"};
+var snurtle=      {val: 3, location:"images/3snurtle.jpg", name:"Snurtle"};
+var surprised=    {val: 3, location:"images/3surprised.jpg", name:"I'm Surprised!"};
+var triTops=      {val: 3, location:"images/3tritops.jpg", name:"Tri-Tops"};
+var bat=          {val: 3, location:"images/4bat.jpg", name:"Grande-Bat"};
+var flyGuy=       {val: 4, location:"images/4flyguy.jpg", name:"Fly-Guy"};
+var liberty=      {val: 5, location:"images/5liberty.jpg", name:"Liberty"};
+var noseAction=   {val: 5, location:"images/5noseAction.jpg", name:"Nose-Action"};
+var mouse=        {val: 8, location:"images/8mouse.png", name:"Mouse-Man"};
+var kittens7=     {val: 20, location:"images/7kittens.png", name:"Cuteness Wins!"};
+var kittens8=     {val: 19, location:"images/8kittens.png", name:"So Cuddly!!!"};
 
-//left cards
-var snowMan =     {val: 10, location:"images/10snowman.jpg", name:"snowMan"};
-var snout =  {val: 12, location:"images/12snout.jpg", name:"snout"};
-var queen =    {val: 12, location:"images/12clubsPachimon.jpg",name:"queen"};
-var curly =     {val: 13, location:"images/13curly.jpg",name:"Curly"};
-var eater = {val: 9, location:"images/9dpach.jpg",name:"eater"};
+var leftCardArray = [snowMan,
+snout, queen,curly, eater, appleGuy,
+unisuar, weird,fishKing, starFish, saucerHead,
+//10
+lobDragon,lizard, pach5,roboTeets, snurtle,
+surprised, triTops, bat, flyGuy,liberty,
+//10
+noseAction, mouse, snout, queen, curly,
+eater, appleGuy, unisuar, weird, fishKing,
+//10
+starFish, saucerHead, lobDragon,lizard, pach5, 
+roboTeets, snurtle, surprised, triTops, bat, 
+//10
+flyGuy,liberty,noseAction,mouse, kittens7,
+ kittens8,
+ //6
+];
 
-var leftCardArray = [snowMan, curly, queen, eater];
-var rightCardArray = [snowMan, curly, queen, eater];
-
+var rightCardArray = [snowMan,
+snout, queen,curly, eater, appleGuy,
+unisuar, weird,fishKing, starFish, saucerHead,
+//10
+lobDragon,lizard, pach5,roboTeets, snurtle,
+surprised, triTops, bat, flyGuy,liberty,
+//10
+noseAction, mouse, snout, queen, curly,
+eater, appleGuy, unisuar, weird, fishKing,
+//10
+starFish, saucerHead, lobDragon,lizard, pach5, 
+roboTeets, snurtle, surprised, triTops, bat, 
+//10
+flyGuy,liberty,noseAction,mouse, kittens7,
+ kittens8,
+ //6
+];
 
 var winArray = [];
 var rightCardScore = 0;
@@ -45,23 +90,27 @@ var flippedLeftRando;
 function buttonPressed(key) {
 	  
 	if (key === "n"){
-	 	flippedRightRando = rightCardArray[(Math.floor(Math.random()*(4)))];
+	 	flippedRightRando = rightCardArray[(Math.floor(Math.random()*(46)))];
 	 	//each time "n" is passed in a new random from rightCard Array is passed in and its url is used     
 	 	$('.rightCardFace').css("background-image",'url(' +flippedRightRando.location+ ')');
 	 	winArray.push(flippedRightRando);
 	 	console.log("right val in if: " + flippedRightRando.val);
-	 	//the right val is coming thru
+	 	 $('.rightName').text("  "+flippedRightRando.name);
 	 	//stop me from happening9
 	 	
 	}
 	else if (key === "s"){
-	 	flippedLeftRando = leftCardArray[(Math.floor(Math.random()*(4)))];
+	 	flippedLeftRando = leftCardArray[(Math.floor(Math.random()*(46)))];
 	 	$('.leftCardFace').css("background-image", 'url('+flippedLeftRando.location+ ')');
 	 	winArray.push(flippedLeftRando);
 	 	console.log("left  val in if: "+ flippedLeftRando.val);
+	 	$('.leftName').text(flippedLeftRando.name + "  ");
 	 	// the left value is coming thru
 	 }
-	 
+	 //grab h4 and add name + vs + name
+	
+	
+
 	 //console.log("right="+flippedRightRando.val);
 								/*  win condtition */
 	////////////////////////////////////////////////////////////////////////////////  

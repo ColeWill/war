@@ -5,6 +5,19 @@ header{
 }
 h4{
 	text-align: center;
+	font-size:20px;
+	color:red;
+
+}
+.yourButton{
+	padding-left:20%;
+	padding-right:20%;
+}
+.leftLetter{
+	
+}
+.rigthLetter{
+	
 }
 main{
 	height:400px;
@@ -126,3 +139,6 @@ footer{
     75%  {background-color:green; left:0px; top:200px;}
     100% {background-color:red; left:0px; top:0px;}
 }
+
+/* funny dog war gif  https://media.giphy.com/media/iCaTJzIdqMqre/giphy.gif */
+/* napalm explosion gif https://media.giphy.com/media/a1GoSNZqfYRvq/giphy.gif */
