@@ -81,9 +81,16 @@ function buttonPressed(key) {
 	 		$('h1').text("You have both failed to Win...");
 	 	}
 	 	winArray = []; //resets array this when a round ends
-	 	if((leftCardScore + rightCardScore) === 5 ){
+
+	 	if(leftCardScore === 3){
 	 		$('h1').css('font-size','200px');
-	 		$('h1').text('the game is over');
+	 		$('h1').addClass('animateTitle');
+	 		$('h1').text('the left side is dope!');
+	 	} 
+	 	else if (rightCardScore === 3){
+	 		$('h1').css('font-size','200px');
+	 		$('h1').addClass('animateTitle');
+	 		$('h1').text('right or die!');
 	 	}
 	}
 	else {
