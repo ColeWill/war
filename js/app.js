@@ -1,5 +1,6 @@
 
 
+alert("You are about to play Pachi-War! it is the classic game of War with a Pachimon-Twist.  Simply press your button to play! But keep in mind that cards are ranked in order of coolness, and not necissarily the numbers that they show... Also, 'Pachi-War' is NOT an ethnic slur, thanks for playing!");
 $(document).ready(function(){
 	$(document).bind('keyup', move);
 	function move(e) {
@@ -21,25 +22,25 @@ $(document).ready(function(){
 
 var snowMan =     {val:10, location:"images/10snowman.jpg", name:"snowMan"};
 var snout =       {val:12, location:"images/12snout.jpg", name:"Snouty Dragon"};
-var queen =       {val:12, location:"images/12clubsPachimon.jpg",name:"Skull Queen"};
+var queen =       {val:8, location:"images/12clubsPachimon.jpg",name:"Skull Queen"};
 var curly =       {val:13, location:"images/13curly.jpg",name:"Curly-Mon"};
 var eater =       {val: 9, location:"images/9dpach.jpg",name:"The-Snacker"};
 var appleGuy=     {val:10, location:"images/10appleguy.jpg", name:"Apple Guy"};
 var unisuar=      {val:11, location:"images/11unisaur.jpg", name:"The Unisaur"};
-var weird=        {val:11, location:"images/11weird.jpg", name:"WTF?!?!"};
+var weird=        {val:2, location:"images/11weird.jpg", name:"WTF?!?!"};
 var fishKing=     {val:13, location:"images/13fishKing.jpg", name:"The Fish King"};
 var starFish=     {val:14, location:"images/14starfish.jpg", name:"StarFish Face"};
-var saucerHead=   {val: 1, location:"images/1saucerhead.jpg", name:"saucerHead"};
-var lobDragon =   {val: 2, location:"images/2dragon.jpg", name: "Lobster Dragon"};
-var lizard=       {val: 2, location:"images/2lizard.jpg", name:"Basic Lizard"};
+var saucerHead=   {val: 8, location:"images/1saucerhead.jpg", name:"saucerHead"};
+var lobDragon =   {val: 15, location:"images/2dragon.jpg", name: "Lobster Dragon"};
+var lizard=       {val: 7, location:"images/2lizard.jpg", name:"Basic Lizard"};
 var pach5 =       {val: 3, location:"images/3ofclubsPachimon.jpg", name:"Basic Sea Lizard"};
-var roboTeets=    {val: 3, location:"images/3robotits.jpg", name:"RoboTeets"};
-var snurtle=      {val: 3, location:"images/3snurtle.jpg", name:"Snurtle"};
-var surprised=    {val: 3, location:"images/3surprised.jpg", name:"I'm Surprised!"};
-var triTops=      {val: 3, location:"images/3tritops.jpg", name:"Tri-Tops"};
-var bat=          {val: 4, location:"images/4bat.jpg", name:"Grande-Bat"};
-var flyGuy=       {val: 4, location:"images/4flyguy.jpg", name:"Fly-Guy"};
-var liberty=      {val: 5, location:"images/5liberty.jpg", name:"Liberty"};
+var roboTeets=    {val: 9, location:"images/3robotits.jpg", name:"Teetz"};
+var snurtle=      {val: 10, location:"images/3snurtle.jpg", name:"Snurtle"};
+var surprised=    {val: 3, location:"images/3surprised.jpg", name:"Spike-Tooth"};
+var triTops=      {val: 9, location:"images/3tritops.jpg", name:"Tri-Tops"};
+var bat=          {val: 8, location:"images/4bat.jpg", name:"Grande-Bat"};
+var flyGuy=       {val: 6, location:"images/4flyguy.jpg", name:"Fly-Guy"};
+var liberty=      {val: 14, location:"images/5liberty.jpg", name:"Liberty"};
 var noseAction=   {val: 5, location:"images/5noseAction.jpg", name:"Nose-Action"};
 var mouse=        {val: 8, location:"images/8mouse.jpg", name:"Mouse-Man"};
 var kittens7=     {val: 20, location:"images/7kittens.png", name:"Cuteness Wins!"};
