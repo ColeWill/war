@@ -1,0 +1,222 @@
+header{
+	text-align: center;
+	background-color: rgb(244, 66, 66);
+	color: #f2e6e6;
+}
+h4{
+
+	text-align: center;
+	font-size:30px;
+	color:red;
+
+}
+.yourButton{
+	padding-left:20%;
+	padding-right:20%;
+}
+
+main{
+	height:400px;
+	text-align: center;
+}
+
+img.cardBack{
+	background-size: cover;
+	height: 260px;
+	width: 190px;
+	display: inline-block;
+	margin-top: 5%;
+}
+
+
+/* these are going to animate the score as they change */
+#leftScore{
+	display:inline-block;
+		font-size:20px;
+		border: 5px black solid;
+		padding: 10px;
+		margin-left: 10%;
+		margin-right:10%;
+}
+#rightScore{
+	display:inline-block;
+		font-size:20px;
+		border: 5px black solid;
+		padding: 10px;
+		margin-left: 10%;
+		margin-right:10%;
+
+
+
+
+}
+.nAnimate{
+	animation-name: nameChange;
+	animation-duration:3s;
+}
+
+@keyframes scoreChange{
+	from{
+		display:inline-block;
+		font-size: 20px;
+		border: 3px black solid;
+		padding: 10px;
+		}
+	to{
+		background-color: red;
+		display:inline-block;
+		color: white;
+		font-size: 40px;
+		border: 5px red solid;
+		padding: 20px;
+		
+		}
+}
+
+.backgroundAn{
+	background-color: red;
+	
+	color:white;
+	position: relative;
+    -webkit-animation-name: backdrop; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+    animation-name: backdrop;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes backdrop{
+ 
+    0%   {background-color:rgba(255,0,0,0); left:0px; top:0px;}
+    25%  {background-color:rgba(255,0,0,.25); left:5px; top:0px;}
+    50%  {background-color:rgba(255,0,0,.5); left:5px; top:5px;}
+    75%  {background-color:rgba(255,0,0,.75); left:0px; top:5px;}
+    100% {background-color:rgba(255,0,0,1); left:0px; top:0px;}
+}
+
+
+
+
+.sAnimate{
+	
+	animation-name: scoreChange;
+	animation-duration:3s;
+}
+/* this is the score change animation */
+@keyframes scoreChange{
+	from{
+		display:inline-block;
+		font-size:20px;
+		border: 3px black solid;
+		padding: 10px;
+		
+		}
+	to{
+		background-color: red;
+		display:inline-block;
+		color: white;
+		font-size:40px;
+		border: 5px red solid;
+		padding: 20px;
+		
+		}
+}
+
+#leftCardFace{
+	display: block;
+	border: 3px dotted grey;
+	float: right;
+	width:190px;
+	height: 260px;
+	background-color: #f0ffea;
+	background-size: cover;
+}
+#rightCardFace{
+	border: 3px dotted grey;
+	float: left;
+	width:190px;
+	height: 260px;
+	background-color: #f0ffea;
+	background-size: cover;
+}
+#leftBack{
+	float:left;
+	margin-left: 5%;
+}
+#rightBack{
+	float: right;
+	margin-right: 5%;
+}
+.leftBox{
+	
+	border: 5px solid black;
+	height:300px;
+	width:500px;
+	float: left;
+	display: block;
+	margin-right: 5%
+	margin-left: 25%;
+	margin-top:5%;
+}
+.rightBox{
+	border: 5px solid black;
+	height:300px;
+	width:500px;
+	float: right;
+	display: block;
+	margin-top:5%;
+}
+button{
+	display: inline-block;
+	margin:0 auto;
+
+}
+#panther{
+	margin-left: 10%;
+	float:left;
+}
+#skull{
+	float:right;
+	margin-right: 10%;
+}
+
+h5{
+	padding: 20px;
+}
+
+footer{
+	clear:both;
+	text-align:center;
+	background-color: black;
+	color: white;
+	height: 300px;
+
+}
+a#gitHub{
+	color: white;
+	padding-top: 20px;
+}
+
+
+.animateTitle {
+    
+    background-color: red;
+    position: relative;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: 2; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+}
+
+@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+
+/* funny dog war gif  https://media.giphy.com/media/iCaTJzIdqMqre/giphy.gif */
+/* napalm explosion gif https://media.giphy.com/media/a1GoSNZqfYRvq/giphy.gif */
