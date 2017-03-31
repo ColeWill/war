@@ -19,13 +19,15 @@ but once I got cards to show on the page, I felt empowered, and I knew I was goi
 
 The parts of the logic that I am most proud of are being able to randomize the card appearance, figuring out how to reset css animations using a setTimeout function, and this line...
 
-$('#rightCardFace').css("background-image",'url(' +flippedRightRando.location+ ')'); 
+	$('#rightCardFace').css("background-image",'url(' +flippedRightRando.location+ ')'); 
 
-...Where I use J query to append the card to an html container, and then by storing the card's url as a variable, concatenating it into the right part of the a css declaration.  
+...Where I use J query to append the card to an html container, and then I  store the card's url as a variable, within the css declartation, via concatenating the string, with the correct css syntax.
 
-This was signifcant to me becuase I realized I can now take any css property, or html element, with anything I want inside of them, and put them on the page with variables inside of them, and that be changed and updated at anytime with javaScript.  
+This was signifcant to me becuase I realized I can now take any css property, or html element, and put them on the page with variables inside of them, that can be constantly changed and updated at anytime with javaScript/jQuery... 
 
-I am very proud that I was able to complete this assignment, and after our cohort ends I plan on coming back to this game and fufilling all of my stretch goals, which are really just alot more css animations.
+	Which is a long way of saying that I can make my pages come to life like a Pachimonster!  
+
+I am very proud that I was able to complete this assignment, and after our cohort ends I plan on coming back to this game and fufilling all of my stretch goals, which are really just alot more css animations, and soundFX.
 
 
 
