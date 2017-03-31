@@ -1,6 +1,6 @@
 
 
-alert("You are about to play Pachi-War! it is the classic game of War with a Pachimon-Twist.  Simply press your button to play! But keep in mind that cards are ranked in order of coolness, and not necissarily the numbers that they show... Also, 'Pachi-War' is NOT an ethnic slur, thanks for playing!");
+alert("You are about to play Pachi-War! it is the classic game of War with a Pachimon-Twist.  Simply press your button to play! But keep in mind that cards are ranked in order of coolness, and not necessarily the numbers that they show... Also, 'Pachi-War' is NOT an ethnic slur, thanks for playing!");
 $(document).ready(function(){
 	$(document).bind('keyup', move);
 	function move(e) {
