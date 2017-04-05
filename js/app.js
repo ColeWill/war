@@ -1,12 +1,24 @@
-alert("You are about to play Pachi-War! it is the classic game of War with a Pachimon-Twist.  Simply press your button to play! But keep in mind that cards are ranked in order of coolness, and not necessarily the numbers that they show... Also, 'Pachi-War' is NOT an ethnic slur, thanks for playing!");
 $(document).ready(function() {
+
+$('.instructions').click(function(){
+	$('.instructions').removeAttr('id','.instructionsAnimate');
+});
+
+	
+	$('.instructions').click(function(){
+  if ( $('.instructionsBox').css('visibility') == 'hidden' )
+    $('.instructionsBox').css('visibility','visible');
+  else
+    $('.instructionsBox').css('visibility','hidden');
+});
+
 	$(document).bind('keyup', move);
 
 	function move(e) {
 		if (e.which == 78) {
-			buttonPressed("n");
+			buttonPressed("right");
 		} else if (e.which == 83) {
-			buttonPressed("s");
+			buttonPressed("left");
 		}
 	}
 });
@@ -38,7 +50,7 @@ var mouse=        {val: 8, location:"images/8mouse.jpg", name:"Mouse-Man"};
 var kittens7=     {val: 20, location:"images/7kittens.png", name:"Cuteness Wins!"};
 var kittens8=     {val: 19, location:"images/8kittens.png", name:"So Cuddly!!!"};
 
-var leftCardArray = [snowMan,
+var cardArray = [snowMan,
 	snout, queen, curly, eater, appleGuy,
 	unisuar, weird, fishKing, starFish, saucerHead,
 	//10
@@ -55,112 +67,79 @@ var leftCardArray = [snowMan,
 	kittens8,
 	//6
 ];
-var rightCardArray = [snowMan,
-	snout, queen, curly, eater, appleGuy,
-	unisuar, weird, fishKing, starFish, saucerHead,
-	//10
-	lobDragon, lizard, pach5, roboTeets, snurtle,
-	surprised, triTops, bat, flyGuy, liberty,
-	//10
-	noseAction, mouse, snout, queen, curly,
-	eater, appleGuy, unisuar, weird, fishKing,
-	//10
-	starFish, saucerHead, lobDragon, lizard, pach5,
-	roboTeets, snurtle, surprised, triTops, bat,
-	//10
-	flyGuy, liberty, noseAction, mouse, kittens7,
-	kittens8,
-	//6
-];
+
+
 var winArray = [];
 var rightCardScore = 0;
 var leftCardScore = 0;
 var flippedRightRando;
 var flippedLeftRando;
 
-function buttonPressed(key) {
-	if (key === "n") {
-		flippedRightRando = rightCardArray[(Math.floor(Math.random() * (46)))];
+function buttonPressed(leftOrRight) {
+	
+		flippedRando = cardArray[(Math.floor(Math.random() * (cardArray.length)))];
 		//each time "n" is passed in a new random from rightCard Array is passed in and its url is used     
-		$('#rightCardFace').css("background-image", 'url(' + flippedRightRando.location + ')');
-		winArray.push(flippedRightRando);
-		console.log("right val in if: " + flippedRightRando.val);
-		$('#rightName').text("    " + flippedRightRando.name);
+		$("#"+leftOrRight+"CardFace").css("background-image", 'url(' + flippedRando.location + ')');
+		flippedRando.side = leftOrRight;
+		winArray.push(flippedRando);
+		
+		$("#"+leftOrRight+"Name").text("    " + flippedRando.name);
 		//stop me from happening9
-	} else if (key === "s") {
-		flippedLeftRando = leftCardArray[(Math.floor(Math.random() * (46)))];
-		$('#leftCardFace').css("background-image", 'url(' + flippedLeftRando.location + ')');
-		winArray.push(flippedLeftRando);
-		console.log("left  val in if: " + flippedLeftRando.val);
-		$('#leftName').text(flippedLeftRando.name + "    ");
-		// the left value is coming thru
-	}
+	
 	//grab h4 and add name + vs + name
 	//console.log("right="+flippedRightRando.val);
 	/*  win condtition */
 	////////////////////////////////////////////////////////////////////////////////  
 	if (winArray.length === 2) {
+		var winner;
 		console.log("both cards have been flipped.");
-		if (flippedRightRando.val > flippedLeftRando.val) {
-			rightCardScore++;
-			$('#rightScore').text(rightCardScore);
-			$('h1').text("Right Won!");
-			$('#rightScore').addClass('sAnimate');
-			$('#rightName').addClass('sAnimate');
-			$('#rightCardFace').addClass('sAnimate');
-			setTimeout(function() {
-				$('#rightScore').removeClass('sAnimate');
-				$('#rightName').removeClass('sAnimate');
-				$('#rightCardFace').removeClass('sAnimate');
-			}, 2000);
-		} else if (flippedLeftRando.val > flippedRightRando.val) {
-			leftCardScore++;
-			$('#leftScore').text(leftCardScore);
-			$('h1').text("Left Won!");
-			$('#leftScore').addClass('sAnimate');
-			$('#leftName').addClass('sAnimate');
-			$('#leftCardFace').addClass('sAnimate');
-			setTimeout(function() {
-				$('#leftScore').removeClass('sAnimate');
-				$('#leftName').removeClass('sAnimate');
-				$('#leftCardFace').removeClass('sAnimate');
-			}, 2000);
-		} else if (flippedRightRando.val === flippedLeftRando.val) {
+		if (winArray[0].val > winArray[1].val) {
+			//rightCardScore++;
+			winner = winArray[0];
+		} else if (winArray[1].val > winArray[0].val) {
+			winner = winArray[1]; 
+		}
+		else if (winArray[0].val === winArray[1].val) {
+
 			$('h1').text("You have both failed to Win...");
 			$('h1').addClass("sAnimate");
 			setTimeout(function() {
 				$('h1').removeClass("sAnimate");
 			}, 2000);
+			winArray = [];
+			return;
 		}
+		var winnerScore = parseInt($('#'+winner.side+'Score').text());
+		winnerScore++;
+		console.log(winnerScore);
+		$('#'+winner.side+'Score').text(winnerScore);
+		$('h1').text(winner.side+"Won!");
+		$('#'+winner.side+'Score').addClass('sAnimate');
+		$('#'+winner.side+'Name').addClass('sAnimate');
+		$('#'+winner.side+'CardFace').addClass('sAnimate');
+		setTimeout(function() {
+			$('#'+winner.side+'Score').removeClass('sAnimate');
+			$('#'+winner.side+'Name').removeClass('sAnimate');
+			$('#'+winner.side+'CardFace').removeClass('sAnimate');
+		}, 2000);
 		winArray = []; //resets array this when a round ends
-		if (leftCardScore === 2) {
+
+		if (winnerScore === 2) {
 			$('h4').addClass('backgroundAn');
 			$('main').addClass('backGroundAn');
-			$('#leftScore').addClass('backgroundAn');
-			$('#leftCardFace').addClass('backgroundAn');
+			$('#'+winner.side+'Score').addClass('backgroundAn');
+			$('#'+winner.side+'CardFace').addClass('backgroundAn');
 		}
-		if (rightCardScore === 2) {
-			$('h4').addClass('backgroundAn');
-			$('main').addClass('backGroundAn');
-			$('#rightScore').addClass('backgroundAn');
-			$('#rightCardFace').addClass('backgroundAn');
-		}
-		if (leftCardScore === 3) {
+		if (winnerScore === 3) {
+			$(document).unbind('keyup');
 			$('h1').css('font-size', '200px');
 			$('h1').addClass('animateTitle');
-			$('h1').text('the left side is dope!');
-			setTimeout(function() {
-				$('h1').removeClass('animateTitle');
-			}, 4000);
-		} else if (rightCardScore === 3) {
-			$('h1').css('font-size', '200px');
-			$('h1').addClass('animateTitle');
-			$('h1').text('right or die!');
+			$('h1').text('the '+winner.side+' side is dope!');
 			setTimeout(function() {
 				$('h1').removeClass('animateTitle');
 			}, 4000);
 		}
-	} else {}
+	}
 }
 
 

@@ -1,71 +1,40 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<title>Pachi-War</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Pachimon-War</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
-
-<header>
-	<h1>Pachi-War</h1>
-
-	<h2>Let the Best Card Win!</h2>
-
-		<h3>
-			Left side is "S"
-			    <span class="yourButton">Press Your Button to play </span>   
-			Right side is "N"
-		</h3>
-
-</header>
-
-<h4><span id="leftName"></span>VS<span id="rightName"></span></h4>
-
-<main>
-<div class=Score>
-	<span id="leftScore">#</span>
-	<span id="rightScore">#</span>
-</div>
-
-	<div class="leftBox">
-			<img id="leftBack" class="cardBack" src="images/black-panther.gif">
-
+	<header>
+		<h1>Pachi-War</h1>
+		<h2>Let the Best Card Win!</h2>
+		<h3>Left side is "S" <span class="instructions" id="instructionsAnimate">
+			<div class="instructionsBox"><br><br>
+				Welcome!<br> to the game of Pachi-War, it is the classic game of war with a pachimon-twist! Simply press your button to play, first player to three wins!  But Beware! cards are ranked in order of coolness, not the number that they show! Have fun and thanks for playing! 
+			</div>Instructions</span> Right side is "N"</h3>
+	</header>
+	<h4><span id="leftName"></span>VS<span id="rightName"></span></h4>
+	<main>
+		<div class="Score">
+			<span id="leftScore">0</span> <span id="rightScore">0</span>
+		</div>
+		<div class="leftBox">
+			<img class="cardBack" id="leftBack" src="images/black-panther.gif">
 			<div id="leftCardFace"></div>
-
-	</div>
-
-	<div class="rightBox">
-		<img id="rightBack" class="cardBack" src="images/redSkulls-card-back.png">
-
-		<div id="rightCardFace"></div>
-	</div>
-
-	
-
-
-	
-		
-	
-
-</main>
-
+		</div>
+		<div class="rightBox">
+			<img class="cardBack" id="rightBack" src="images/redSkulls-card-back.png">
+			<div id="rightCardFace"></div>
+		</div>
+	</main>
 	<footer>
-
-		<h5>
-			Copyright 2017 &copy; <br><br>
-			<a id="gitHub" href="https://github.com/CoolCode2">CoolCode2</a>
-		</h5>
-
+		<h5>Copyright 2017 &copy;<br>
+		<br>
+		<a href="https://github.com/CoolCode2" id="gitHub">CoolCode2</a></h5>
 	</footer>
-
-<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
- 
-</script>
-<script type="text/javascript" src="js/app.js"></script>>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js">
+	</script> 
+	<script src="js/app.js" type="text/javascript">
+	</script>&gt;
 </body>
-</html>
+</html>ß
